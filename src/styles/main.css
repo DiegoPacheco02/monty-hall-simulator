@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.reset-button {
+  background: #c4fffb;
+  color: #161d30;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.reset-button:hover {
+  background: #a3fffc;
+}
+
+.reset-button:active {
+  background: #70d0ce;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px;
+}
+
+.game-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-title {
+  margin-top: 8rem;
+  color: #161d30;
+}

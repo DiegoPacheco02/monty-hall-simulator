@@ -1,0 +1,49 @@
+body {
+    background: #1389AE;
+}
+
+.doors-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 5rem;
+}
+
+.door-container {
+  position: relative;
+  height: 374px;
+}
+
+.image {
+  z-index: -1;
+  position: absolute;
+  object-fit: cover;
+}
+
+.goat {
+  width: 80%;
+  left: 10%;
+  bottom: 10px;
+}
+
+.graduation {
+  width: 100%;
+  left: 0;
+  bottom: 5%;
+}
+
+.door {
+    cursor: pointer;
+}
+
+#leaf {
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.door.final #leaf,
+.door.disabled:first-child #leaf {
+  transform: rotateY(-100deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.3);
+}
