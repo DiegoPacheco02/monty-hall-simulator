@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./GameControls.css"
 
 const GameControls = ({ onKeepDecision, onChangeDecision, onReset }) => {
   const [promptOpen, setPromptOpen] = useState(false);
