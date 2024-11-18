@@ -5,8 +5,9 @@ body {
 .doors-container {
   display: flex;
   justify-content: center;
-  align-items: end;
-  gap: 5rem;
+  align-items:self-end;
+  gap: 10rem;
+  margin-bottom: 40px;
 }
 
 .door-container {

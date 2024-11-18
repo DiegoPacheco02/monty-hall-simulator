@@ -21,11 +21,18 @@ export const useGameState = () => {
     }
   };
 
-  const makeFinalDecision = (door) => {
-    // Permitir que el jugador tome su decisión final.
+  const makeFinalDecision = (action) => {
+    // Determina la decisión del jugador: "mantener" o "cambiar".
     if (selectedDoor !== null) {
-      setFinalSelection(door);
-      setIsGameComplete(true);
+      if (action === "mantener") {
+        setFinalSelection(selectedDoor); // Mantiene la puerta inicial.
+      } else if (action === "cambiar") {
+        const remainingDoor = [0, 1, 2].find(
+          (door) => door !== selectedDoor && door !== revealedDoor
+        );
+        setFinalSelection(remainingDoor); // Cambia a la otra puerta.
+      }
+      setIsGameComplete(true); // Finaliza el juego.
     }
   };
 
@@ -45,7 +52,7 @@ export const useGameState = () => {
     finalSelection,
     isGameComplete,
     selectDoor,
-    makeFinalDecision,
+    makeFinalDecision, // Ahora expone la nueva función para manejar decisiones.
     resetGame,
   };
 };
