@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-
+import "./GameControls.css"
 
 const GameControls = ({ onKeepDecision, onChangeDecision, onReset }) => {
   const [promptOpen, setPromptOpen] = useState(false);
@@ -21,8 +20,13 @@ const GameControls = ({ onKeepDecision, onChangeDecision, onReset }) => {
   return (
     <div>
       <div className="controls">
-      <div className="next-choice">
-        <button onClick={handleOpenPrompt}>Siguiente Movimiento</button>
+        <div className="next-choice">
+          <button onClick={handleOpenPrompt} className="game-button">
+            Siguiente Movimiento
+          </button>
+          <button onClick={onReset} className="game-button">
+            Reiniciar Juego
+          </button>
         </div>
 
         {promptOpen && (
@@ -34,7 +38,6 @@ const GameControls = ({ onKeepDecision, onChangeDecision, onReset }) => {
             </div>
           </div>
         )}
-        <button onClick={onReset}>Reiniciar Juego</button>
       </div>
     </div>
   );

@@ -42,10 +42,19 @@ const GameView = () => {
               ? "¡Ganaste! Elegiste la puerta correcta 🎉"
               : "Perdiste, mejor suerte la próxima vez 😞"}
           </h2>
-          <button className="reset-button" onClick={resetGame}>
-            Jugar de nuevo
+          <button className="game-button" onClick={resetGame}>
+            Reiniciar Juego
           </button>
         </div>
+      )}
+
+      {!isGameComplete && selectedDoor !== null && (
+        <GameControls
+          onOpenModal={handleOpenModal}
+          onKeepDecision={handleKeepDecision}
+          onChangeDecision={handleChangeDecision}
+          onReset={resetGame}
+        />
       )}
 
       <div className="doors-container">
@@ -66,15 +75,6 @@ const GameView = () => {
           />
         ))}
       </div>
-
-      {!isGameComplete && selectedDoor !== null && (
-        <GameControls
-          onOpenModal={handleOpenModal}
-          onKeepDecision={handleKeepDecision}
-          onChangeDecision={handleChangeDecision}
-          onReset={resetGame}
-        />
-      )}
 
       {isModalOpen && (
         <>
