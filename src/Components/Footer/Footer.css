@@ -59,7 +59,7 @@
     margin-bottom: 10px;
   }
   
-  .dialog-content p {
+  .dialog-content p, li {
     margin-bottom: 20px;
     text-align: justify;
   }
